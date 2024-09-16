@@ -8,15 +8,11 @@
   </head>
   <body>
     <div id="app">
-      <div>
-        <label for="goal">Goal</label>
-        <input type="text" id="goal" />
-        <button>Add Goal</button>
-      </div>
-      <ul>
-        
-      </ul>
+      <button @click="increment">
+        Count is: {{ count }}
+      </button>
     </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
