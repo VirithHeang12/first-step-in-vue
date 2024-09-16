@@ -10,13 +10,15 @@
     <div id="app">
       <div>
         <label for="goal">Goal</label>
-        <input type="text" id="goal" />
-        <button>Add Goal</button>
+        <input type="text" id="goal" v-model="input"/>
+        <h1>{{ message }}</h1>
+        <button @click="addElement">Add Goal</button>
       </div>
-      <ul>
-        
+      <ul v-for="message in messages">
+        <li>{{ message }}</li>
       </ul>
     </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
