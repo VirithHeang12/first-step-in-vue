@@ -1,18 +1,31 @@
-Vue.createApp({
-    data() {
+const app = Vue.createApp({
+    data(){
         return {
-            message: '',
             input: '',
-            messages: []
+            messages: [],
+            randomNumber: 0,
         }
     },
     methods: {
-        addElement() {
+        addElement(number, event) {
             if (this.input === '') {
                 return;
             }
             this.messages.push(this.input);
             this.input = '';
-        }
-    }
-}).mount('#app');
+        },
+    },
+    computed: {
+        count() {
+            return this.messages.length;
+        },
+    },
+    watch: {
+        count(newValue, oldValue) {
+            console.log('count changed', newValue, oldValue);
+        },
+    },
+});
+
+
+app.mount('#app');

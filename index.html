@@ -10,10 +10,12 @@
     <div id="app">
       <div>
         <label for="goal">Goal</label>
-        <input type="text" id="goal" v-model="input"/>
-        <h1>{{ message }}</h1>
-        <button @click="addElement">Add Goal</button>
+        <h1>{{ randomNumber }}</h1>
+        <input type="text" id="goal"  v-model="input"/>
+        <button v-on:click="addElement(1, $event)">Add Goal</button>
+        <button v-on:click="randomNumber = Math.random()">Roll Dice</button>
       </div>
+      <h1>Computed: {{ count }}</h1>
       <ul v-for="message in messages">
         <li>{{ message }}</li>
       </ul>
